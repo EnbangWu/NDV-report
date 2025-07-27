@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto 周报 - 动态仪表板</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Crypto 周报</h1>
+      <p id="report-range">Week (Jul&nbsp;14&nbsp;-&nbsp;Jul&nbsp;20)</p>
+    </header>
+
+    <!-- 宏观板块 -->
+    <section id="macro">
+      <h2>宏观</h2>
+      <article class="subsection" id="market-overview">
+        <h3>市场概况</h3>
+        <p>
+          本周加密资产整体走高。比特币一度冲至&nbsp;<span id="btc-price">123,000</span>&nbsp;美元，随后数日区间震荡；以太坊则独自强势飙升，带动部分山寨币随之上扬。情绪指标由上周的&nbsp;82&nbsp;%进一步攀升至&nbsp;<span id="fear-greed">87</span>&nbsp;% ，持续处于「贪婪」区间。
+        </p>
+      </article>
+
+      <article class="subsection" id="core-drivers">
+        <h3>核心驱动力</h3>
+        <ul>
+          <li>机构吸筹效应 —— 上市公司与基金集中囤积 ETH，引发市场 FOMO，成为上涨主引擎。</li>
+          <li>期货多头牵引 —— ETH 多头持仓持续走高，衍生品市场对现货形成正向反馈。</li>
+        </ul>
+      </article>
+
+      <article class="subsection" id="stablecoin-flows">
+        <h3>稳定币资金动向</h3>
+        <p>
+          稳定币延续升势，且单周净流入创近一年新高，USDT 与 USDC 齐头并进。
+        </p>
+        <ul>
+          <li>USDT 重现快速扩张，显示海外机构买盘明显升温。</li>
+          <li>USDC 单周增量跨过&nbsp;10&nbsp;亿美元关口，表明美国本土资金也在提速。</li>
+        </ul>
+      </article>
+
+      <article class="subsection" id="political-risk">
+        <h3>政治风险</h3>
+        <p>
+          美联储独立性之争：关于“特朗普或解雇鲍威尔”的传闻虽被否认，但干预预期令市场对政策连贯性有所担忧。
+        </p>
+      </article>
+
+      <article class="subsection" id="legislation">
+        <h3>立法进展</h3>
+        <p>
+          本周被称为「加密立法周」：
+        </p>
+        <ul>
+          <li>《CLARITY 法案》与《反&nbsp;CBDC&nbsp;法案》已在众议院通过，待参议院表决。</li>
+          <li>《GENIUS 法案》过关后递交总统签署。</li>
+          <li>关键节点：两大法案预计下周在参议院投票，或成市场“催化”或“黑天鹅”。</li>
+        </ul>
+      </article>
+
+      <article class="subsection" id="macro-dashboard">
+        <h3>宏观数据看板</h3>
+        <p>
+          <a href="https://enbangwu-macro-dashboard-dashboard-cg4yq6.streamlit.app/" target="_blank">点击查看实时宏观仪表板</a>
+        </p>
+      </article>
+    </section>
+
+    <!-- 链上数据板块 -->
+    <section id="onchain">
+      <h2>链上数据</h2>
+      <article class="subsection">
+        <h3>MVRV (BTC)</h3>
+        <p>当前 MVRV 比率：<span id="mvrv-btc">--</span></p>
+        <p class="small">数据源：<a href="https://studio.glassnode.com" target="_blank">Glassnode</a></p>
+      </article>
+      <article class="subsection">
+        <h3>DEX 跨链流动性</h3>
+        <p>24 小时交易量：<span id="dex-volume">--</span></p>
+        <p class="small">数据源：<a href="https://dune.com" target="_blank">Dune</a></p>
+      </article>
+      <article class="subsection">
+        <h3>韩国溢价指数</h3>
+        <p>当前数值：<span id="korean-premium">--</span></p>
+        <p class="small">数据源：<a href="https://cryptoquant.com" target="_blank">CryptoQuant</a></p>
+      </article>
+      <article class="subsection">
+        <h3>Token 解锁事件</h3>
+        <table>
+          <thead>
+            <tr><th>Token</th><th>解锁比例</th><th>估值 (USD)</th></tr>
+          </thead>
+          <tbody id="token-unlocks">
+            <tr><td>DMC</td><td>3.94%</td><td>591.55k</td></tr>
+            <tr><td>MMX</td><td>1.02%</td><td>503.16k</td></tr>
+            <tr><td>HOOK</td><td>1.54%</td><td>534.35k</td></tr>
+            <tr><td>KARRAT</td><td>2.07%</td><td>689.39k</td></tr>
+            <tr><td>AVAIL</td><td>33.56%</td><td>16.51m</td></tr>
+          </tbody>
+        </table>
+        <p class="small">数据源：<a href="https://token.unlocks" target="_blank">Token Unlocks</a></p>
+      </article>
+      <article class="subsection">
+        <h3>比特币 ETF 净流入</h3>
+        <p><span id="etf-flows">--</span></p>
+        <p class="small">数据源：<a href="https://www.coinglass.com/bitcoin-etf" target="_blank">Coinglass</a></p>
+      </article>
+      <article class="subsection">
+        <h3>贪婪指数</h3>
+        <p>当前数值：<span id="greed-index">--</span></p>
+        <p class="small">数据源：<a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank">Alternative.me</a></p>
+      </article>
+      <article class="subsection">
+        <h3>Altcoin Season 指数</h3>
+        <p>当前数值：<span id="alt-season">--</span></p>
+        <p class="small">数据源：<a href="https://www.blockchaincenter.net/en/altcoin-season-index/" target="_blank">Blockchain Center</a></p>
+      </article>
+      <article class="subsection">
+        <h3>年化波动率 (1 周)</h3>
+        <p>比特币：<span id="btc-vol-1w">--</span></p>
+        <p>以太坊：<span id="eth-vol-1w">--</span></p>
+        <p class="small">数据源：<a href="https://glassnode.com" target="_blank">Glassnode</a></p>
+      </article>
+      <article class="subsection">
+        <h3>长/短仓比</h3>
+        <p>BTC 多空比：<span id="long-short-ratio">--</span></p>
+        <p class="small">数据源：<a href="https://coinglass.com/LongShortatiohl" target="_blank">Coinglass</a></p>
+      </article>
+    </section>
+
+    <!-- 关键标的板块 -->
+    <section id="assets">
+      <h2>关键标的</h2>
+      <table>
+        <thead>
+          <tr><th>标的</th><th>周低</th><th>周高</th><th>波幅</th><th>成交量</th></tr>
+        </thead>
+        <tbody id="asset-table">
+          <tr><td>NASDQ</td><td>19596</td><td>20423</td><td>1.91%</td><td>2.44m</td></tr>
+          <tr><td>XAU</td><td>3237</td><td>3435</td><td>2.61%</td><td>2.63m</td></tr>
+          <tr><td>JPY</td><td>0.0068</td><td>0.007</td><td>-0.22%</td><td>683k BTC</td></tr>
+          <tr><td>BTC</td><td>93376</td><td>104985</td><td>10%</td><td>8.32k</td></tr>
+          <tr><td>ETH</td><td>1751</td><td>2609</td><td>39%</td><td>1.35m</td></tr>
+          <tr><td>SOL</td><td>141</td><td>180</td><td>40%</td><td>7.33m</td></tr>
+          <!-- 更多标的可依次添加 -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 生态动向 -->
+    <section id="ecosystem">
+      <h2>生态动向</h2>
+      <article class="subsection">
+        <h3>见顶指标</h3>
+        <p><a href="#">[七月见顶指标 PDF]</a></p>
+      </article>
+      <article class="subsection">
+        <h3>ETH</h3>
+        <p><a href="https://flo.host/uwlnnMU/" target="_blank">查看风险指标</a></p>
+      </article>
+    </section>
+
+    <!-- 重点新闻 -->
+    <section id="news">
+      <h2>重点新闻</h2>
+      <article class="news-item">
+        <h3>白宫数字资产市场工作组预计于7月22日发布首份加密政策报告</h3>
+        <p>
+          美国众议院本周因日程调整休会，参议院将重心转向加密货币市场结构。参议院银行委员会将于本周三举行听证会，讨论为三万亿美元数字资产行业建立监管框架。预计将发布市场结构改革讨论稿，结合 2023 年 Lummis-Gillibrand 负责任金融创新法案和众议院 CLARITY 法案的相关内容。
+        </p>
+      </article>
+      <article class="news-item">
+        <h3>下周将表决稳定币法案 GENIUS Act、CLARITY 法案及反 CBDC 监控法案</h3>
+        <p>
+          下周众议院将就参议院通过的稳定币法案 GENIUS Act、CLARITY 法案以及反央行数字货币监控法案进行表决。同时，白宫数字资产市场工作组预计将发布涵盖监管与立法建议的报告，或涉及建立国家数字资产储备和保障加密企业公平获得银行服务等内容。
+        </p>
+      </article>
+      <article class="news-item">
+        <h3>超过 90% 以太坊地址处于盈利状态，创下 2024 年 12 月以来新高</h3>
+        <p>
+          据 Sentora 监测，目前超过 90% 的以太坊地址均处于盈利状态。这一比例创下 2024 年 12 月以来的新高。由于在当前价格之上购入的地址较少，链上阻力看似较弱。第一个显著阻力位略低于 4000 美元关口，约有 239 万个地址持有的 ETH 仍处于亏损状态。
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>该页面为示例 MVP，用于展示周报的整体框架和数据结构。所有动态数据需通过 API 调用实时更新。</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
